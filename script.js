@@ -2,7 +2,7 @@
 const envelope = document.getElementById("envelope-container");
 const letter = document.getElementById("letter-container");
 const noBtn = document.querySelector(".no-btn");
-const yesBtn = document.querySelector(".btn[alt='Yes']");
+const yesBtn = document.querySelector(".yes-btn");
 
 const title = document.getElementById("letter-title");
 const catImg = document.getElementById("letter-cat");
@@ -38,31 +38,29 @@ noBtn.addEventListener("mouseover", () => {
 
 // Logic to make YES btn to grow
 
-// let yesScale = 1;
+let yesScale = 1;
 
-// yesBtn.style.position = "relative"
-// yesBtn.style.transformOrigin = "center center";
-// yesBtn.style.transition = "transform 0.3s ease";
+yesBtn.style.position = "relative"
+yesBtn.style.transformOrigin = "center center";
+yesBtn.style.transition = "transform 0.3s ease";
 
-// noBtn.addEventListener("click", () => {
-//     yesScale += 2;
+noBtn.addEventListener("click", () => {
+    yesScale += 2;
 
-//     if (yesBtn.style.position !== "fixed") {
-//         yesBtn.style.position = "fixed";
-//         yesBtn.style.top = "50%";
-//         yesBtn.style.left = "50%";
-//         yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
-//     }else{
-//         yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
-//     }
-// });
+    if (yesBtn.style.position !== "fixed") {
+        yesBtn.style.position = "fixed";
+        yesBtn.style.top = "50%";
+        yesBtn.style.left = "50%";
+        yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
+    }else{
+        yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
+    }
+});
 
 // YES is clicked
 
 yesBtn.addEventListener("click", () => {
-    title.textContent = "Yippeeee!";
-
-    catImg.src = "cat_dance.gif";
+    title.textContent = "Yuppiiiiiii!!! - Benim olunuz lütfen.";
 
     document.querySelector(".letter-window").classList.add("final");
 
